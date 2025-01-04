@@ -14,6 +14,7 @@ Manufacturer: LENOVO
 Product Name: 83DH
 System Version: Legion Slim 5 16AHP9
 ```
+**NOTE: All of these are also automated into a bash script available [here](here)**
 
 ## Fix the clock changing when booting to Windows
 Run this and it'll tell Linux to use the Local Hardware Clock
@@ -93,5 +94,6 @@ This should be the default but for some reason, it didn't happen.
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x0c8000", ATTR{remove}="1"
     ```
 - Reboot
+
 
 **\*\*NOTE\*\* : As mentioned in the discussion, Changing Legion Power Profiles or Unplugging while charging etc will Switch to D0 and eat the battery. So restarting at that time is only the way.**
