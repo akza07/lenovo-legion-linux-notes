@@ -40,7 +40,7 @@ The `--gpu` option is used to monitor the power state of NVIDIA GPUs. This can b
 2. Navigate to the root directory of the repository.
 3. Run the script using the desired installation option:
 ```bash
-$ ./script.sh --option_name
+$ ./fedora-bootstrap.sh --option_name
 ```
 Replace `option_name` with the desired option (e.g., `--nvidia`, `--fix-clock`, etc.).
 
