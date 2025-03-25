@@ -28,6 +28,23 @@ According to this thread [» [SOLVED] High laptop power usage (Legion slim 5 gen
 
 Test it first by adding it during the grub menu by pressing <kbd>E</kbd> and adding it after say `quiet` arg. 
 
+You can check your current one by running
+
+`cat /proc/cmdline`
+
+and it would output something like
+
+```bash
+➜  ~ cat /proc/cmdline
+BOOT_IMAGE=(hd0,gpt1)/vmlinuz-6.13.8-200.fc41.x86_64 root=UUID=4f15a407-b8f7-4ac6-b873-ed57d5536114 ro rhgb acpi_backlight=native quiet
+```
+
+To make it persistent
+
+```bash
+sudo grubby --args="acpi_backlight=native" --update-kernel=ALL
+```
+
 ## Setting Up NVIDIA Graphics
 
 ### With Secureboot enabled
