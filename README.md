@@ -21,6 +21,13 @@ Run this and it'll tell Linux to use the Local Hardware Clock
 
 `sudo timedatectl set-local-rtc 1 --adjust-system-clock`
 
+## Fix the brightness on AMD GPU
+The backlight issue mentioned in the [cszach/linux-on-lenovo-legion](https://github.com/cszach/linux-on-lenovo-legion) didn't work for me.
+According to this thread [» [SOLVED] High laptop power usage (Legion slim 5 gen 9)](https://bbs.archlinux.org/viewtopic.php?id=300872)
+`acpi_backlight=native` needs to be added to the boot params.
+
+Test it first by adding it during the grub menu by pressing <kbd>E</kbd> and adding it after say `quiet` arg. 
+
 ## Setting Up NVIDIA Graphics
 
 ### With Secureboot enabled
