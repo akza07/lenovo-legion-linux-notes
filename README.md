@@ -19,7 +19,9 @@ System Version: Legion Slim 5 16AHP9
 ## Fix the clock changing when booting to Windows
 Run this and it'll tell Linux to use the Local Hardware Clock
 
-`sudo timedatectl set-local-rtc 1 --adjust-system-clock`
+```bash
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
+```
 
 ## Fix the brightness on AMD GPU
 The backlight issue mentioned in the [cszach/linux-on-lenovo-legion](https://github.com/cszach/linux-on-lenovo-legion) didn't work for me.
@@ -55,15 +57,17 @@ I'm using Fedora because they have their guide is easier to work with than ArchW
 Follow the instructions from [RPM Fusion - HowTo/Secureboot](https://rpmfusion.org/Howto/Secure%20Boot)
     - Import the key to EFI Firmware by running the following.
 
-        `sudo mokutil --import /etc/pki/akmods/certs/public_key.der`
+        ```bash
+      sudo mokutil --import /etc/pki/akmods/certs/public_key.der
+        ```
 
     <details>
     <summary>How to revert?</summary>    
 
-        `sudo mokutil --export`
-        and it will export the keys to the current directory.
-        `sudo mokutil --delete <THE FILE>` will "un-enroll".
-
+        ```bash
+      sudo mokutil --export #        and it will export the keys to the current directory.
+      sudo mokutil --delete <THE FILE>` # will "un-enroll".
+      ```
         It's okay even if your linux installation is gone. Using a live USB you can do the same. It's stored in your UEFI Firmware so it's better to not fill the memory with unused keys.
     </details>
     
@@ -71,7 +75,9 @@ Follow the instructions from [RPM Fusion - HowTo/Secureboot](https://rpmfusion.o
 
     __If it's too confusing, just disable it__
     
-    `sudo mokutil --disable-validation`
+    ```bash
+      sudo mokutil --disable-validation
+    ```
 
 ---
 
