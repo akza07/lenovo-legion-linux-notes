@@ -47,6 +47,21 @@ To make it persistent
 sudo grubby --args="acpi_backlight=native" --update-kernel=ALL
 ```
 
+## Poor Wi-Fi Signal
+Fetch information about WiFi interface
+```bash
+iw dev
+```
+Check regulatory requirements
+```bash
+iw reg get
+```
+Now depending on your region, set the `txpower`
+```bash
+sudo iw dev wlan0 set txpower fixed 30mBm
+```
+
+
 ## Setting Up NVIDIA Graphics
 
 ### With Secureboot enabled
